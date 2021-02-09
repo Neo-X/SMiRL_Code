@@ -1,0 +1,10 @@
+*.swp
+*.swo
+*.pkl
+*.jpg
+*.png
+*.mp4
+*.gif
+*.ini
+__pycache__/
+/ubuntu_smirl.img

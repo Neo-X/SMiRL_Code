@@ -1,0 +1,12 @@
+
+# rlkit
+gym
+gym[atari]
+atari_py
+gym_minigrid
+matplotlib
+# torch
+scikit-image
+vizdoom
+crcmod
+cloudpickle==1.3.0

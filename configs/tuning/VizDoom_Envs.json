@@ -1,0 +1,11 @@
+{
+    "env_kwargs": [{
+	    "doom_scenario": "surprise/envs/vizdoom/scenarios/take_cover.cfg",
+	    "god": false,
+	    "render": false
+    }, {
+	    "doom_scenario": "surprise/envs/vizdoom/scenarios/defend_the_line.cfg",
+	    "god": false,
+	    "render": false
+    }]
+}

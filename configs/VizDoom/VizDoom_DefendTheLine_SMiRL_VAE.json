@@ -1,0 +1,95 @@
+{
+    "algorithm":"SAC",
+    "version":"normal",
+    "layer_size":256,
+    "network_args": 
+    {
+    	"type": "conv_mixed"
+    },
+    "replay_buffer_size": 50000,
+    "algorithm_kwargs": {
+        "num_epochs":3000,
+        "num_eval_steps_per_epoch":1000,
+        "num_trains_per_train_loop":1000,
+        "num_expl_steps_per_train_loop":1000,
+        "min_num_steps_before_training":1000,
+        "max_path_length":500,
+        "batch_size":256
+    },
+    "trainer_kwargs": {
+        "discount":0.99,
+        "learning_rate":3E-4
+    },
+    "render_kwargs":{
+        "render": true
+    },
+    "wrappers": [
+    	{"soft_reset_wrapper": true},
+    	{"dict_obs_wrapper": {
+    		"obs_key": "observation"
+    		}
+    	},
+    	{"resize_observation_wrapper": {
+	        "new_size": [26,20,1],
+	        "new_shape": [20,26,1],
+	        "grayscale": true,
+	        "obs_key": "observation",
+	        "out_key_name": "small_img"
+	        }},
+    	{"resize_observation_wrapper": {
+	        "new_size": [64,48,1],
+	        "new_shape": [48,64,1],
+	        "grayscale": true,
+	        "obs_key": "observation"
+	        }},
+    	{"rendering_observation": 
+			{
+				"resize": [64,48,1]
+			}},
+    	{"ObsHistoryWrapper": {
+    		"history_length": 4,
+    		"stack_channels": true,
+    		"channel_dim": 2,
+    		"obs_key": "observation"
+    	}},
+        {"vae_wrapper": {
+	        "vae": null,
+	        "channel_last": true,
+	        "image_channels": 4,
+	        "latent_size": 130,
+	        "h_dim": 768,
+	        "obs_key": "observation",
+	        "obs_label": "latent_obs",
+	        "conv_net": true,
+	        "steps": 250,
+	        "step_skip": 10
+    	}},
+    	{"smirl_wrapper": {
+    		"buffer_type": "Gaussian",
+    		"obs_label": "latent_obs",
+    		"obs_out_label": "theta",
+    		"smirl_rew_scale": 0.01,
+    		"add_true_rew": false,
+    		"latent_obs_size": 130
+    	}},
+    	{"smirl_wrapper": {
+    		"buffer_type": "Gaussian",
+    		"obs_label": "small_img",
+    		"obs_out_label": "theta2",
+    		"add_true_rew": "only",
+    		"smirl_rew_scale": 0.1,
+    		"latent_obs_size": 520
+    	}},
+    	{"dict_to_obs_wrapper": {
+    		"obs_keys": ["observation", "theta"],
+    		"obs_size": 12549
+    	}}
+    ],
+    "log_comet": false,
+    "env": "VizDoom",
+        "env_kwargs": {
+	    "doom_scenario": "surprise/envs/vizdoom/scenarios/defend_the_line.cfg",
+	    "god": false,
+	    "render": false
+    }
+}

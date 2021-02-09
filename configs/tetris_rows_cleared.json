@@ -1,0 +1,52 @@
+{
+    "algorithm":"SAC",
+    "version":"normal",
+    "layer_size":256,
+    "network_args": 
+    {
+    	"type": "flat"
+    },
+    "replay_buffer_size": 100000,
+    "algorithm_kwargs": {
+        "num_epochs":3000,
+        "num_eval_steps_per_epoch":1000,
+        "num_trains_per_train_loop":1000,
+        "num_expl_steps_per_train_loop":1000,
+        "min_num_steps_before_training":1000,
+        "max_path_length":1000,
+        "batch_size":256
+    },
+    "trainer_kwargs": {
+        "discount":0.99,
+        "learning_rate":3E-4
+    },
+    "render_kwargs":{
+        "render": true
+    },
+    "wrappers": [
+    	{"soft_reset_wrapper": true},
+    	{"dict_obs_wrapper": {
+    		"obs_key": "observation"
+    		}
+    	},
+    	{"rendering_observation": 
+		{
+			"resize": [64,48,1]
+		}},
+		{ "smirl_wrapper": {
+    		"buffer_type": "Bernoulli",
+    		"add_true_rew": "only",
+    		"obs_label": "observation",
+    		"obs_out_label": "theta"
+        }},
+    	{"dict_to_obs_wrapper": {
+    		"obs_keys": ["observation"],
+    		"obs_size": 41
+    	}}
+    ],
+    "log_comet": false,
+    "env": "Tetris",
+    "env_kwargs": {
+    	"reward_func": "rows_cleared"
+    }
+}

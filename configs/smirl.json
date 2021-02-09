@@ -1,0 +1,13 @@
+{
+    "comment__": "Batch size for learning, this is more of a minimum",
+"batch_size": 5000,
+	"comment__": "Number of learning iterations",
+"n_itr": 200,
+	"comment__": "Mac T for epochs",
+"max_path_length": 128,
+	"comment__": "number of parallel simulation threads",
+"n_parallel": 8,
+	"comment__": "number order/sequence of tasks to learn",
+"task_sequence": 3,
+"wrappers": ["SMiRL"]
+}
