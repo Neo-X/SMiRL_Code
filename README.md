@@ -3,6 +3,11 @@
 Repo for environments, gym wrappers, and scripts for the SMiRL project.
 
 
+## Requirements:
+
+doodad: https://github.com/Neo-X/doodad/tree/master/doodad/easy_launch
+rlkit: https://github.com/Neo-X/rlkit/tree/surprise
+
 ## Commands:
 
 ###Run Vizdoom SMiRL experiments
