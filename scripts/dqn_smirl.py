@@ -36,14 +36,14 @@ def get_network(network_args, obs_dim, action_dim):
     
     
 def get_env(variant):
-    from launchers.config_private_smirl import BASE_CODE_DIR
+    from launchers.config import BASE_CODE_DIR
     if (variant["env"] == "Tetris"):
         from surprise.envs.tetris.tetris import TetrisEnv
         env = TetrisEnv(render=True, **variant["env_kwargs"])
     elif (variant["env"] == "VizDoom"):
         from surprise.envs.vizdoom.VizdoomWrapper import VizDoomEnv
         env_wargs = variant["env_kwargs"]
-        env = VizDoomEnv(config_path=BASE_CODE_DIR + "/BayesianSurpriseCode/" + env_wargs["doom_scenario"], 
+        env = VizDoomEnv(config_path=BASE_CODE_DIR + env_wargs["doom_scenario"], 
                          **env_wargs)
     else: 
         import gym

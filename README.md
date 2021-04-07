@@ -9,6 +9,19 @@ doodad: https://github.com/Neo-X/doodad/
 
 rlkit: https://github.com/Neo-X/rlkit/tree/surprise
 
+### Build Instruction
+
+```
+conda create --name smirl python=3.5 pip
+conda activate smirl
+pip install -r requirements.txt
+```
+
+Then you will need to updated the paths in the `launchers.config.py`. 
+You need to update `BASE_CODE_DIR` to the location you have saved SMiRL_Code.
+Also update `LOCAL_LOG_DIR` to the location you would like the logging data to be saved on your computer.
+You can look at the [doodad](https://github.com/Neo-X/doodad/) for more details on this configuration.
+
 ## Commands:
 
 ###Run Vizdoom SMiRL experiments
