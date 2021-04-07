@@ -11,5 +11,5 @@ vizdoom==1.1.7
 crcmod==1.7
 cloudpickle==1.3.0
 git+https://github.com/Neo-X/rlkit.git@surprise
-git+https://github.com/Neo-X/doodad.git
+git+https://github.com/Neo-X/doodad.git@surprise
 

@@ -143,7 +143,6 @@ def experiment(doodad_config, variant):
     from rlkit.core import logger
     from rlkit.launchers.launcher_util import setup_logger
     print ("doodad_config.base_log_dir: ", doodad_config.base_log_dir)
-#     setup_logger('ICLR-rebuttal-vizdoom-TakeCover-curiosity', variant=variant)
     from datetime import datetime
     timestamp = datetime.now().strftime('%Y_%m_%d_%H_%M_%S_%f')
     setup_logger('wrapped_'+variant['env'], variant=variant, log_dir=doodad_config.base_log_dir+"/smirl/"+variant['exp_name']+"/"+timestamp+"/")
