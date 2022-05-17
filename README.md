@@ -17,13 +17,17 @@ conda activate smirl
 pip install -r requirements.txt
 ```
 
-Then you will need to updated the paths in the `launchers.config.py`. 
+Then you will need copy the [`config.py`](https://github.com/Neo-X/doodad/blob/master/doodad/easy_launch/config.py) file locally to `launchers.config.py` and update the paths in the file. 
 You need to update `BASE_CODE_DIR` to the location you have saved SMiRL_Code.
 Also update `LOCAL_LOG_DIR` to the location you would like the logging data to be saved on your computer.
 You can look at the [doodad](https://github.com/Neo-X/doodad/) for more details on this configuration.
 
 ## Commands:
 
+A basic example.
+```
+python3 scripts/dqn_smirl.py --config=configs/Carnival_Small_SMiRL.json 
+```
 ###Run Vizdoom SMiRL experiments
 
 python3 scripts/dqn_smirl.py --config=configs/VizDoom_TakeCover_Small.json --exp_name=vizdoom_small_test --run_mode=ssh --random_seeds=1 --meta_sim_threads=4 --log_comet=true --training_processor_type=gpu --tuningConfig=configs/GPU_indexes.json
