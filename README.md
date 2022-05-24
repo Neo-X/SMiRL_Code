@@ -12,7 +12,7 @@ rlkit: https://github.com/Neo-X/rlkit/tree/surprise
 ### Build Instruction
 
 ```
-conda create --name smirl python=3.5 pip
+conda create --name smirl python=3.7 pip
 conda activate smirl
 pip install -r requirements.txt
 ```
