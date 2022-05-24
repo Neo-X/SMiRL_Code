@@ -12,7 +12,7 @@ rlkit: https://github.com/Neo-X/rlkit/tree/surprise
 ### Build Instruction
 
 ```
-conda create --name smirl python=3.5 pip
+conda create --name smirl python=3.7 pip
 conda activate smirl
 pip install -r requirements.txt
 ```
@@ -26,7 +26,11 @@ You can look at the [doodad](https://github.com/Neo-X/doodad/) for more details 
 
 A basic example.
 ```
-python3 scripts/dqn_smirl.py --config=configs/Carnival_Small_SMiRL.json 
+python3 scripts/dqn_smirl.py --config=configs/Carnival_Small_SMiRL.json --exp-name=test
+```
+With docker locally
+```
+python3 scripts/dqn_smirl.py --config=configs/tetris_SMiRL.json --exp-name=test --run_mode=local_docker
 ```
 ###Run Vizdoom SMiRL experiments
 
