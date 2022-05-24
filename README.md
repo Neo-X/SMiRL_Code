@@ -30,7 +30,7 @@ python3 scripts/dqn_smirl.py --config=configs/Carnival_Small_SMiRL.json --exp-na
 ```
 With docker locally
 ```
-python3 scripts/dqn_smirl.py --config=configs/Carnival_Small_SMiRL.json --exp-name=test --run_mode=local_docker
+python3 scripts/dqn_smirl.py --config=configs/tetris_SMiRL.json --exp-name=test --run_mode=local_docker
 ```
 ###Run Vizdoom SMiRL experiments
 
