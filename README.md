@@ -5,7 +5,11 @@ Repo for environments, gym wrappers, and scripts for the SMiRL project.
 
 ## Requirements:
 
+- For distributing experiments.
+
 doodad: https://github.com/Neo-X/doodad/
+
+- RL library
 
 rlkit: https://github.com/Neo-X/rlkit/tree/surprise
 
@@ -15,6 +19,12 @@ rlkit: https://github.com/Neo-X/rlkit/tree/surprise
 conda create --name smirl_code python=3.7 pip
 conda activate smirl_code
 pip install -r requirements.txt
+pip install -e ./
+cd ../
+git pull git@github.com:Neo-X/doodad.git
+cd doodad
+pip install -e ./
+cd ../smirl_code
 ```
 
 Then you will need copy the [`config.py`](https://github.com/Neo-X/doodad/blob/master/doodad/easy_launch/config.py) file locally to `launchers.config.py` and update the paths in the file. 
@@ -26,7 +36,7 @@ You can look at the [doodad](https://github.com/Neo-X/doodad/) for more details 
 
 A basic example.
 ```
-python3 scripts/dqn_smirl.py --config=configs/Carnival_Small_SMiRL.json --exp-name=test
+python3 scripts/dqn_smirl.py --config=configs/Carnival_Small_SMiRL.json --run_mode=local --exp_name=test_smirl --training_processor_type=gpu
 ```
 With docker locally
 ```
