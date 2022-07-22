@@ -1,7 +1,7 @@
 
 # rlkit
-gym==0.10.5
-gym[atari]
+gym==0.17.3
+gym[atari]==0.17.3
 atari_py==0.2.6
 gym_minigrid==1.0.1
 matplotlib==3.0.3

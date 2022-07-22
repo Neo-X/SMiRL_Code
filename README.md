@@ -12,8 +12,8 @@ rlkit: https://github.com/Neo-X/rlkit/tree/surprise
 ### Build Instruction
 
 ```
-conda create --name smirl python=3.7 pip
-conda activate smirl
+conda create --name smirl_code python=3.7 pip
+conda activate smirl_code
 pip install -r requirements.txt
 ```
 

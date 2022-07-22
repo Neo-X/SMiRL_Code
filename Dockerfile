@@ -31,14 +31,6 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         build-essential \
-        cuda-command-line-tools-${CUDA/./-} \
-        cuda-cublas-${CUDA/./-} \
-        cuda-cufft-${CUDA/./-} \
-        cuda-curand-${CUDA/./-} \
-        cuda-cusolver-${CUDA/./-} \
-        cuda-cusparse-${CUDA/./-} \
-        curl \
-        libcudnn7=${CUDNN}+cuda${CUDA} \
         libfreetype6-dev \
         libhdf5-serial-dev \
         libzmq3-dev \
@@ -103,7 +95,7 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda2-2019.10-Linux-x86_6
 
 RUN conda update -y --name base conda && conda clean --all -y
 
-RUN conda create --name smirl python=3.5 pip
+RUN conda create --name smirl python=3.7 pip
 RUN echo "source activate smirl" >> ~/.bashrc
 ENV PATH /opt/conda/envs/smirl/bin:$PATH
 
