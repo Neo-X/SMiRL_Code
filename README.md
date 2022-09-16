@@ -7,7 +7,7 @@ Repo for environments, gym wrappers, and scripts for the SMiRL project.
 
 - For distributing experiments.
 
-doodad: https://github.com/Neo-X/doodad/
+doodad: https://github.com/montrealrobotics/doodad
 
 - RL library
 
