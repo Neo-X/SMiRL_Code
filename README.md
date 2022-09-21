@@ -34,7 +34,12 @@ You can look at the [doodad](https://github.com/Neo-X/doodad/) for more details 
 
 ## Commands:
 
-A basic example.
+A basic examples.
+
+```
+python3 scripts/dqn_smirl.py --config=configs/tetris_SMiRL.json --run_mode=local --exp_name=test_smirl
+```
+
 ```
 python3 scripts/dqn_smirl.py --config=configs/Carnival_Small_SMiRL.json --run_mode=local --exp_name=test_smirl --training_processor_type=gpu
 ```
