@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo singularity --writable-tmpfsbuild ubuntu_smirl.img Singularity
+sudo singularity --writable-tmpfs build ubuntu_smirl.img Singularity
