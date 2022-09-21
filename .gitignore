@@ -8,3 +8,4 @@
 *.ini
 __pycache__/
 /ubuntu_smirl.img
+/smirl_app.sif
