@@ -21,7 +21,7 @@ conda activate smirl_code
 pip install -r requirements.txt
 pip install -e ./
 cd ../
-git pull git@github.com:Neo-X/doodad.git
+git clone git@github.com:montrealrobotics/doodad.git
 cd doodad
 pip install -e ./
 cd ../smirl_code
