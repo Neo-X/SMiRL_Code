@@ -9,3 +9,5 @@
 __pycache__/
 /ubuntu_smirl.img
 /smirl_app.sif
+/learning_data/
+/smirl.egg-info/
